@@ -138,11 +138,8 @@
 
 
             <style>
-
-
                 .sl {
                     font-family: 'Arial', sans-serif;
-                   
                     padding: 0px;
                 }
           
@@ -180,7 +177,9 @@
                     background-position: center;
                     border-radius: 2px;
                     display: flex;
-                    align-items: end;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
                     padding: 30px;
                     flex-shrink: 0;
                     cursor: pointer;
@@ -192,49 +191,72 @@
                 }
           
                 .slide-1 {
-                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('view1.webp');
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.489), rgba(0, 0, 0, 0.678)), url('deliverytruck.webp');
                     background-size: cover;
                     background-position: center;
                 }
           
                 .slide-2 {
-                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('deliverytruck.webp');
-                    background-size: cover;
-                    background-position: center;
-                }
-          
-                .slide-3 {
                     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('view1.webp');
                     background-size: cover;
                     background-position: center;
                 }
           
+                .slide-3 {
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('deliverytruck.webp');
+                    background-size: cover;
+                    background-position: center;
+                }
+          
                 .slide-4 {
-                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('display2.webp');
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('view1.webp');
                     background-size: cover;
                     background-position: center;
                 }
-          
+        
                 .slide-5 {
-                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('display.webp');
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('deliverytruck.webp');
                     background-size: cover;
                     background-position: center;
                 }
-          
-                .slide-6 {
-                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/pj4.webp');
-                    background-size: cover;
-                    background-position: center;
+        
+               
+        
+                .slide-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
                 }
-          
+        
                 .slide-text {
                     color: white;
-                    font-size: 24px;
+                    font-size: 28px;
                     font-weight: bold;
                     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+                    margin-top: auto;
+                    margin-bottom: auto;
                 }
           
-          
+                .slide-link {
+                    font-size: 1rem;
+                    color: #ffffff;
+                    text-decoration: none;
+                    background-color: #830000;
+                    padding: 12px 30px;
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    margin-top: auto;
+                }
+        
+                .slide-link:hover {
+                    background-color: #084670;
+                    color: white;
+                    transform: scale(1.05);
+                }
           
                 .carousel-indicators {
                     display: flex;
@@ -245,17 +267,17 @@
                 }
           
                 .indicator {
-                    width: 10px;
-                    height: 10px;
+                    width: 16px;
+                    height: 16px;
                     border-radius: 50%;
-                    background: #ffffff;
+                    background: #9a0000;
                     cursor: pointer;
                     transition: all 0.3s ease;
                 }
           
                 .indicator.active {
-                    background: rgb(231, 217, 142);
-                    border: 3px solid  rgb(28, 164, 255);
+                    background: rgb(240, 246, 255);
+                    border: 4px solid rgb(179, 4, 4);
                     transform: scale(1.3);
                 }
           
@@ -296,24 +318,6 @@
                     right: 20px;
                 }
              
-                .scroll-hint{
-                    text-align: right;
-                    margin-top: 10px;
-                  
-                    font-size: 18.5px;
-                 
-                    
-                    padding:5px
-                }
-          
-                .linking{
-                  font-size: 1rem;
-                  color:#084670;
-                  text-decoration: none;
-                  background-color: rgb(255, 255, 255);
-                  padding:7px 13px;
-                  border-radius: 40px;
-                }
                 @media (max-width: 768px) {
                     .carousel-nav {
                         display: none;
@@ -325,7 +329,12 @@
                     }
                     
                     .slide-text {
-                        font-size: 18px;
+                        font-size: 20px;
+                    }
+        
+                    .slide-link {
+                        font-size: 0.9rem;
+                        padding: 10px 24px;
                     }
                 }
           
@@ -338,6 +347,10 @@
                     .carousel-track {
                         gap: 10px;
                     }
+        
+                    .slide-text {
+                        font-size: 18px;
+                    }
                 }
             </style>
           
@@ -345,27 +358,39 @@
             
           <div class="sl">
             <div class="carousel-container">
-
                 <div class="carousel-wrapper" id="carouselWrapper">
                     <div class="carousel-track" id="carouselTrack">
                         <div class="carousel-slide slide-1">
-                            <div class="slide-text"></div>
+                            <div class="slide-content">
+                                <div class="slide-text">Modern Study Rooms</div>
+                                <a href="#" class="slide-link">Get Quote</a>
+                            </div>
                         </div>
                         <div class="carousel-slide slide-2">
-                            <div class="slide-text"></div>
+                            <div class="slide-content">
+                                <div class="slide-text">Comfortable Living Spaces</div>
+                                <a href="#" class="slide-link">Get Quote</a>
+                            </div>
                         </div>
                         <div class="carousel-slide slide-3">
-                            <div class="slide-text"></div>
+                            <div class="slide-content">
+                                <div class="slide-text">24/7 Security & WiFi</div>
+                                <a href="#" class="slide-link">Get Quote</a>
+                            </div>
                         </div>
                         <div class="carousel-slide slide-4">
-                            <div class="slide-text"></div>
+                            <div class="slide-content">
+                                <div class="slide-text">Fully Furnished Rooms</div>
+                                <a href="#" class="slide-link">Get Quote</a>
+                            </div>
                         </div>
                         <div class="carousel-slide slide-5">
-                            <div class="slide-text"></div>
+                            <div class="slide-content">
+                                <div class="slide-text">Community Spaces</div>
+                                <a href="#" class="slide-link">Get Quote</a>
+                            </div>
                         </div>
-                        <div class="carousel-slide slide-6">
-                            <div class="slide-text"></div>
-                        </div>
+
                     </div>
                     
                     <button class="carousel-nav carousel-prev" onclick="prevSlide()">‹</button>
@@ -378,11 +403,10 @@
                     <span class="indicator" onclick="scrollToSlide(2)"></span>
                     <span class="indicator" onclick="scrollToSlide(3)"></span>
                     <span class="indicator" onclick="scrollToSlide(4)"></span>
-                    <span class="indicator" onclick="scrollToSlide(5)"></span>
+                    
                 </div>
-                
-    
             </div>
+        </div>
           
             <script>
                 const wrapper = document.getElementById('carouselWrapper');
