@@ -804,10 +804,13 @@
 
 
 
-
-
     <style>
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -819,8 +822,8 @@
         }
         
         .text-section {
-            padding: 55px 30px;
-           
+            padding: 80px 60px;
+         
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -830,6 +833,58 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(2.5px) brightness(1);
+        }
+        
+        .image-text {
+            position: relative;
+            z-index: 1;
+            font-family: Arial, sans-serif;
+            font-size:  18px;
+            font-weight: 700;
+            color: #f4e7e7;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+           
+                    text-decoration: none;
+                    background-color: #6e323277;
+                    padding: 11px 32px;
+                  
+                    border:1px solid white;
+                    
+                  
+        }
+        
+        .top-left {
+            order: 1;
+        }
+        
+        .top-right {
+            order: 2;
+        }
+        
+        .bottom-left {
+            order: 3;
+        }
+        
+        .bottom-right {
+            order: 4;
         }
         
         .label {
@@ -877,10 +932,9 @@
             }
         }
     </style>
-</head>
-<body>
+
     <div class="container">
-        <div class="section text-section">
+        <div class="section text-section top-left">
             <div class="label">
                 <span>HOW WE HELP</span>
             </div>
@@ -890,11 +944,17 @@
             </p>
         </div>
         
-        <div class="section image-section" style="background-image: url('view1.webp');"></div>
+        <div class="section image-section top-right">
+            <div class="image-overlay" style="background-image: url('view1.webp');"></div>
+            <div class="image-text">Precision</div>
+        </div>
         
-        <div class="section image-section" style="background-image: url('deliverytruck.webp');"></div>
+        <div class="section image-section bottom-left">
+            <div class="image-overlay" style="background-image: url('deliverytruck.webp');"></div>
+            <div class="image-text">Innovation</div>
+        </div>
         
-        <div class="section text-section">
+        <div class="section text-section bottom-right">
             <div class="label">
                 <span>HOW WE HELP</span>
             </div>
@@ -906,28 +966,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
