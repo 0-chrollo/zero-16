@@ -806,198 +806,106 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            main {
-            min-height:90vh;
-                display: flex;
-                flex-wrap: wrap;
-            }
-            
-            .column {
-                width: 50%;
-                height: 57.5vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                font-family: Arial, sans-serif;
-                font-weight: bold;
-            }
-            
-            .top-left {
-                background-color: #ffffff;
-                color: #000000;
-
-            }
-            
-            .top-right {
-                
-              
-              
-            }
-            
-            .bottom-left {
-               
-            }
-            
-            .bottom-right {
-                background-color: #ffffff;
-                color: #000000;
-            }
-            
-            @media (max-width: 768px) {
-                .bottom-left {
-                    display: none;
-               
-            }
-                .column {
-                    width: 100%;
-                }
-            }
-        </style>
-  
-    <main>
-        <div class="column top-left">
-
-
     <style>
 
-        
-        .help-section {
-         
-            padding: 0px 40px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
         }
         
-        .help-container {
-            max-width: 800px;
+        .section {
+            width: 50%;
+            min-height: 50vh;
         }
         
-        .help-label {
+        .text-section {
+            padding: 55px 30px;
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .image-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .label {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 30px;
         }
         
-        .help-label::before {
+        .label::before {
             content: '';
             width: 40px;
             height: 3px;
-            background-color: #c41e3a;
+            background-color: #8b1538;
         }
         
-        .help-label span {
-            font-family: 'Arial', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
+        .label span {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 700;
             color: #333;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
-        .help-heading {
-            font-family: 'Georgia', serif;
-            font-size: 56px;
-            font-weight: 300;
-            color: #333;
+        .heading {
+            font-family: Georgia, serif;
+            font-size: 52px;
+            font-weight: 400;
+            color: #2d2d2d;
             line-height: 1.2;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
-        .help-description {
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            font-weight: 300;
+        .description {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
             color: #555;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
-        @media (max-width: 768px) {
-            .help-section {
-                padding: 0px 20px;
-            }
-            
-            .help-heading {
-                font-size: 40px;
-            }
-            
-            .help-description {
-                font-size: 16px;
+        @media (max-width: 968px) {
+            .section {
+                width: 100%;
             }
         }
     </style>
-
-
-    <section class="help-section">
-        <div class="help-container">
-            <div class="help-label">
+</head>
+<body>
+    <div class="container">
+        <div class="section text-section">
+            <div class="label">
                 <span>HOW WE HELP</span>
             </div>
-            
-            <h2 class="help-heading">Quality, engineered in?</h2>
-            
-            <p class="help-description">
+            <h2 class="heading">Quality, engineered in?</h2>
+            <p class="description">
                 From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
             </p>
         </div>
-    </section>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="column top-right">
-
-            <div class="side">
-
-<style>
-.side{
-            width: 100%;
-            height: 100vh;/* or any height you choose */
-    
-            background-image: url('view1.webp');
-            background-size:cover;    /* always fills the div */
-            background-position: center;   /* prevents alignment gaps */
-            background-repeat: no-repeat;  /* stops tiling */
-}
-</style>
+        
+        <div class="section image-section" style="background-image: url('view1.webp');"></div>
+        
+        <div class="section image-section" style="background-image: url('deliverytruck.webp');"></div>
+        
+        <div class="section text-section">
+            <div class="label">
+                <span>HOW WE HELP</span>
             </div>
-
+            <h2 class="heading">Quality, engineered in?</h2>
+            <p class="description">
+                From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
+            </p>
         </div>
+    </div>
+</body>
+</html>
 
 
 
@@ -1005,55 +913,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="column bottom-left">
-            
-            <div class="side">
-
-                <style>
-                .side{
-                            width: 100%;
-                            height: 70vh;/* or any height you choose */
-                    
-                            background-image: url('view1.webp');
-                            background-size:contain;     /* always fills the div */
-                            background-position: center;   /* prevents alignment gaps */
-                            background-repeat: no-repeat;  /* stops tiling */
-                }
-                </style>
-                            </div>
-        </div>
-        <div class="column bottom-right">
-
-            <section class="help-section">
-                <div class="help-container">
-                    <div class="help-label">
-                        <span>HOW WE HELP</span>
-                    </div>
-                    
-                    <h2 class="help-heading">Quality, engineered in?</h2>
-                    
-                    <p class="help-description">
-                        From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
-                    </p>
-                </div>
-            </section>
-        </div>
-    </main>
-  
-
-    
 
 
 
