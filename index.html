@@ -796,9 +796,11 @@
 
         </div>
     </div>
+</div>
+    
 
-
-
+<br>
+<br>
 
 
 
@@ -831,14 +833,14 @@
             }
             
             main {
-            min-height:100vh;
+            min-height:90vh;
                 display: flex;
                 flex-wrap: wrap;
             }
             
             .column {
                 width: 50%;
-                height: auto;
+                height: 57.5vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -854,13 +856,13 @@
             }
             
             .top-right {
-                background-color: #000000;
-                color: #ffffff;
+                
+              
+              
             }
             
             .bottom-left {
-                background-color: #000000;
-                color: #ffffff;
+               
             }
             
             .bottom-right {
@@ -869,12 +871,16 @@
             }
             
             @media (max-width: 768px) {
+                .bottom-left {
+                    display: none;
+               
+            }
                 .column {
                     width: 100%;
                 }
             }
         </style>
-  <br>
+  
     <main>
         <div class="column top-left">
 
@@ -933,7 +939,7 @@
         
         @media (max-width: 768px) {
             .help-section {
-                padding: 60px 20px;
+                padding: 0px 20px;
             }
             
             .help-heading {
@@ -976,11 +982,20 @@
 
         <div class="column top-right">
 
+            <div class="side">
 
-
-
-
-
+<style>
+.side{
+            width: 100%;
+            height: 100vh;/* or any height you choose */
+    
+            background-image: url('view1.webp');
+            background-size:cover;    /* always fills the div */
+            background-position: center;   /* prevents alignment gaps */
+            background-repeat: no-repeat;  /* stops tiling */
+}
+</style>
+            </div>
 
         </div>
 
@@ -1002,8 +1017,39 @@
 
 
 
-        <div class="column bottom-left">Bottom Left</div>
-        <div class="column bottom-right">Bottom Right</div>
+        <div class="column bottom-left">
+            
+            <div class="side">
+
+                <style>
+                .side{
+                            width: 100%;
+                            height: 70vh;/* or any height you choose */
+                    
+                            background-image: url('view1.webp');
+                            background-size:contain;     /* always fills the div */
+                            background-position: center;   /* prevents alignment gaps */
+                            background-repeat: no-repeat;  /* stops tiling */
+                }
+                </style>
+                            </div>
+        </div>
+        <div class="column bottom-right">
+
+            <section class="help-section">
+                <div class="help-container">
+                    <div class="help-label">
+                        <span>HOW WE HELP</span>
+                    </div>
+                    
+                    <h2 class="help-heading">Quality, engineered in?</h2>
+                    
+                    <p class="help-description">
+                        From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
   
 
