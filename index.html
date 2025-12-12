@@ -25,7 +25,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(214, 214, 214, 0.22);
+            background: rgba(255, 255, 255, 0.22);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -309,7 +309,7 @@
         }
 
         body {
-            background: rgb(215, 215, 215);
+            background: rgb(243, 243, 243);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
@@ -793,14 +793,235 @@
             </script>
             
           </div>
-          
-
-
-
 
         </div>
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            main {
+                min-height: 100vh;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .column {
+                width: 50%;
+                height: 50vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+            }
+            
+            .top-left {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            
+            .top-right {
+                background-color: #000000;
+                color: #ffffff;
+            }
+            
+            .bottom-left {
+                background-color: #000000;
+                color: #ffffff;
+            }
+            
+            .bottom-right {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            
+            @media (max-width: 768px) {
+                .column {
+                    width: 100%;
+                }
+            }
+        </style>
+  <br>
+    <main>
+        <div class="column top-left">
+
+
+    <style>
+
+        
+        .help-section {
+            background-color: #f5f5f5;
+            padding: 80px 40px;
+        }
+        
+        .help-container {
+            max-width: 800px;
+        }
+        
+        .help-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .help-label::before {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: #c41e3a;
+        }
+        
+        .help-label span {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .help-heading {
+            font-family: 'Georgia', serif;
+            font-size: 56px;
+            font-weight: 300;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+        
+        .help-description {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .help-section {
+                padding: 60px 20px;
+            }
+            
+            .help-heading {
+                font-size: 40px;
+            }
+            
+            .help-description {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+
+    <section class="help-section">
+        <div class="help-container">
+            <div class="help-label">
+                <span>HOW WE HELP</span>
+            </div>
+            
+            <h2 class="help-heading">Quality, engineered in?</h2>
+            
+            <p class="help-description">
+                From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
+            </p>
+        </div>
+    </section>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="column top-right">
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="column bottom-left">Bottom Left</div>
+        <div class="column bottom-right">Bottom Right</div>
+    </main>
+  
+
+    
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
