@@ -976,187 +976,209 @@
     <br>
     <section class="values">
 
+            <style>
+                .values {
+                    background: rgb(87, 10, 10);
+                }
+        
+                .main-wrapper {
+                    min-height: 100vh;
+                
+                    padding: 1rem;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                }
+        
+                .content-area {
+                    max-width: 1280px;
+                    margin: 0 auto;
+                }
+        
+                .cards-layout {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+        
+                .info-card {
+                    background: white;
+                    border-radius: 2px;
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                    overflow: hidden;
+                    transition: box-shadow 0.3s ease;
+                }
+        
+                .info-card:hover {
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                }
+        
+                .inner-content {
+                    padding: 1rem;
+                }
+        
+                .top-divider {
+                    width: 100%;
+                    height: 3px;
+                    background: linear-gradient(to right, #fb923c, #fde047, #14b8a6);
+                    margin-bottom: 1rem;
+                }
+        
+                .description-text {
+                    color: #374151;
+                    font-size: 0.8rem;
+                    line-height: 1.5;
+                    margin-bottom: 1rem;
+                }
+        
+                .cta-button {
+                    width: 100%;
+                    background: #1f2937;
+                    color: white;
+                    font-weight: 600;
+                    padding: 0.6rem 0.8rem;
+                    border: none;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.65rem;
+                    letter-spacing: 0.025em;
+                }
+        
+                .cta-button:hover {
+                    background: #111827;
+                }
+        
+                .btn-label {
+                    margin-right: 0.5rem;
+                }
+        
+                .icon-arrow {
+                    width: 14px;
+                    height: 14px;
+                    transition: transform 0.2s ease;
+                }
+        
+                .cta-button:hover .icon-arrow {
+                    transform: translateX(4px);
+                }
+        
+                @media (min-width: 768px) {
+                    .main-wrapper {
+                        padding: 3rem;
+                    }
+        
+                    .cards-layout {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 2rem;
+                    }
+        
+                    .inner-content {
+                        padding: 2.5rem;
+                    }
+        
+                    .description-text {
+                        font-size: 1.125rem;
+                        line-height: 1.75;
+                        margin-bottom: 2rem;
+                    }
+        
+                    .cta-button {
+                        padding: 1rem 1.5rem;
+                        font-size: 0.875rem;
+                    }
+        
+                    .btn-label {
+                        margin-right: 0.75rem;
+                    }
+        
+                    .icon-arrow {
+                        width: 20px;
+                        height: 20px;
+                    }
+        
+                    .top-divider {
+                        height: 4px;
+                        margin-bottom: 2rem;
+                    }
+                }
+        
+                @media (min-width: 1024px) {
+                    .cards-layout {
+                        gap: 2rem;
+                    }
+                }
+            </style>
 
-
-    <style>
-        .values {
-          background:rgb(94, 9, 9);
-        }
-
-        .main-wrapper {
-            min-height: 100vh;
-           
-            padding: 2rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        .content-area {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .cards-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .info-card {
-            background: white;
-           
-            box-shadow: 0 10px 15px -3px rgba(144, 137, 137, 0.514), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .info-card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .inner-content {
-            padding: 2.5rem;
-        }
-
-        .top-divider {
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, #fb923c, #fde047, #14b8a6);
-            margin-bottom: 2rem;
-        }
-
-        .description-text {
-            color: #374151;
-            font-size: 1.125rem;
-            line-height: 1.75;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            width: 100%;
-            background: rgb(92, 10, 10);
-            color: white;
-            font-weight: 600;
-            padding: 1rem 1.5rem;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.875rem;
-            letter-spacing: 0.025em;
-        }
-
-        .cta-button:hover {
-            background: #111827;
-        }
-
-        .btn-label {
-            margin-right: 0.75rem;
-        }
-
-        .icon-arrow {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.2s ease;
-        }
-
-        .cta-button:hover .icon-arrow {
-            transform: translateX(4px);
-        }
-
-        @media (min-width: 768px) {
-            .main-wrapper {
-                padding: 3rem;
-            }
-
-            .cards-layout {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .inner-content {
-                padding: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .cards-layout {
-                gap: 2.5rem;
-            }
-        }
-    </style>
-
-<div class="main-wrapper">
-    <div class="content-area">
-        <div class="cards-layout">
-            <!-- Card 1 -->
-            <div class="info-card">
-                <div class="inner-content">
-                    <div class="top-divider"></div>
-                    <p class="description-text">
-                        We are committed to being a responsible and ethical business, this run through our business and operations day-to-day, it is part of who we are as Morgan Sindall Infrastructure.
-                    </p>
-                    <button class="cta-button">
-                        <span class="btn-label">FIND OUT MORE ABOUT OUR COMMITMENT</span>
-                        <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="info-card">
-                <div class="inner-content">
-                    <div class="top-divider"></div>
-                    <p class="description-text">
-                        It means behaving with integrity towards all stakeholders and having a positive impact on the communities where we work.
-                    </p>
-                    <button class="cta-button">
-                        <span class="btn-label">FIND OUT MORE ABOUT OUR COMMITMENT</span>
-                        <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="info-card">
-                <div class="inner-content">
-                    <div class="top-divider"></div>
-                    <p class="description-text">
-                        To ensure we are always doing the right thing and are adaptable, are responsible business approach is supported by our Total Commitments.
-                    </p>
-                    <button class="cta-button">
-                        <span class="btn-label">FIND OUT MORE ABOUT OUR COMMITMENT</span>
-                        <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="info-card">
-                <div class="inner-content">
-                    <div class="top-divider"></div>
-                    <p class="description-text">
-                        We believe in transparency, accountability, and making meaningful contributions to society through our infrastructure projects.
-                    </p>
-                    <button class="cta-button">
-                        <span class="btn-label">FIND OUT MORE ABOUT OUR COMMITMENT</span>
-                        <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
+        <div class="main-wrapper">
+            <div class="content-area">
+                <div class="cards-layout">
+                    <!-- Card 1 -->
+                    <div class="info-card">
+                        <div class="inner-content">
+                            <div class="top-divider"></div>
+                            <p class="description-text">
+                                We are committed to being a responsible and ethical business, this run through our business and operations day-to-day, it is part of who we are as Morgan Sindall Infrastructure.
+                            </p>
+                            <button class="cta-button">
+                                <span class="btn-label">INNOVATION</span>
+                                <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="info-card">
+                        <div class="inner-content">
+                            <div class="top-divider"></div>
+                            <p class="description-text">
+                                It means behaving with integrity towards all stakeholders and having a positive impact on the communities where we work.
+                            </p>
+                            <button class="cta-button">
+                                <span class="btn-label">QUALITY</span>
+                                <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="info-card">
+                        <div class="inner-content">
+                            <div class="top-divider"></div>
+                            <p class="description-text">
+                                To ensure we are always doing the right thing and are adaptable, are responsible business approach is supported by our Total Commitments.
+                            </p>
+                            <button class="cta-button">
+                                <span class="btn-label">INTEGRITY</span>
+                                <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+        
+                    <!-- Card 4 -->
+                    <div class="info-card">
+                        <div class="inner-content">
+                            <div class="top-divider"></div>
+                            <p class="description-text">
+                                We believe in transparency, accountability, and making meaningful contributions to society through our infrastructure projects.
+                            </p>
+                            <button class="cta-button">
+                                <span class="btn-label">ACCOUNTABILITY</span>
+                                <svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
 
     </section>
 </body>
