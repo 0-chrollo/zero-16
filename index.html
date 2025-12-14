@@ -25,7 +25,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(101, 4, 4, 0.718);
+            background: rgba(99, 4, 4, 0.82);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -38,7 +38,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgb(143, 1, 1);
+            border-bottom: 4px solid rgb(211, 145, 145);
             
         }
         .logo {
@@ -77,13 +77,18 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: #667eea;
-            transition: width 0.3s ease;
+            height: 2px;       
         }
 
         .nav-menu li a:hover {
-            color: #667eea;
+            text-decoration: none;
+                background-color: #05568b;
+                padding: 10px 28px;
+                border-radius: 40px;
+                border:1px solid white;
+                transition: all 0.3s ease;
+                color:white;
+               
         }
 
         .nav-menu li a:hover::after {
@@ -208,7 +213,7 @@
     .current{
         
                 text-decoration: none;
-                background-color: #830000;
+                background-color: #05568b;
                 padding: 10px 28px;
                 border-radius: 40px;
                 border:1px solid white;
