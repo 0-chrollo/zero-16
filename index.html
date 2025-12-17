@@ -1607,6 +1607,101 @@ background-color: rgb(71, 5, 5);
             Copyright © 2025 Zero-16 Enterprise | South Africa
     </footer>
     
+    <style>
 
+
+        .widget {
+            border: #740b0b solid 4px;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgb(66, 91, 106);
+          color: white;
+          padding: 3px 15px;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          cursor: pointer;
+          transition: transform 0.2s;
+          z-index: 1000;
+        }
+    
+        .widget:hover {
+          transform: scale(1.05);
+        }
+    
+        .icon {
+            border: #ffffff solid 1px;
+          width: 27px;
+          height: 27px;
+          background: rgb(93, 5, 5);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          animation: shake 4s ease-in-out infinite;
+        }
+    
+        .loading {
+            padding-top: 7px;
+          display: flex;
+          gap: 6px;
+          align-items: center;
+        }
+    
+        .ball {
+           border: #ffffff solid 1px;
+          width: 8px;
+          height: 8px;
+          background: rgb(93, 5, 5);
+          border-radius: 50%;
+          animation: float 1.2s ease-in-out infinite;
+        }
+    
+        .ball:nth-child(1) {
+          animation-delay: 0s;
+        }
+    
+        .ball:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+    
+        .ball:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+    
+        .ball:nth-child(4) {
+          animation-delay: 0.6s;
+        }
+    
+        @keyframes shake {
+          0% { transform: rotate(0deg); }
+          2% { transform: rotate(-10deg); }
+          4% { transform: rotate(10deg); }
+          6% { transform: rotate(-10deg); }
+          8% { transform: rotate(10deg); }
+          10% { transform: rotate(0deg); }
+          100% { transform: rotate(0deg); }
+        }
+    
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+      </style>
+    
+      <div class="widget" onclick="alert('Call button clicked!')">
+        <div class="icon"><i class="fas fa-phone"></i></div>
+        <div class="loading">
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+        </div>
+      </div>
+    
 </body>
 </html>
