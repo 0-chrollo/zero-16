@@ -1,208 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Cards</title>
+    <style>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    main {
-    min-height:90vh;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .column {
-        width: 50%;
-        height: 57.5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-    }
-    
-    .top-left {
-        background-color: #ffffff;
-        color: #000000;
+        .all {
+         
+          
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
 
-    }
-    
-    .top-right {
-        
+        .services {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    }
-    
-    .bottom-left {
-       
-    }
-    
-    .bottom-right {
-        background-color: #ffffff;
-        color: #000000;
-    }
-    
-    @media (max-width: 768px) {
-        .bottom-left {
-            display: none;
-       
-    }
-        .column {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: rgb(99, 7, 7);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgb(111, 8, 8);
+            padding: 15px 24px;
+            border-radius:1px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #667eea;
+            z-index: 10;
+        }
+
+        .card-image {
             width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
-    }
-</style>
 
-<main>
-<div class="column top-left">
-
-
-<style>
-
-
-.help-section {
- 
-    padding: 0px 40px;
-}
-
-.help-container {
-    max-width: 800px;
-}
-
-.help-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-}
-
-.help-label::before {
-    content: '';
-    width: 40px;
-    height: 3px;
-    background-color: #c41e3a;
-}
-
-.help-label span {
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.help-heading {
-    font-family: 'Georgia', serif;
-    font-size: 56px;
-    font-weight: 300;
-    color: #333;
-    line-height: 1.2;
-    margin-bottom: 40px;
-}
-
-.help-description {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: #555;
-    line-height: 1.8;
-}
-
-@media (max-width: 768px) {
-    .help-section {
-        padding: 0px 20px;
-    }
-    
-    .help-heading {
-        font-size: 40px;
-    }
-    
-    .help-description {
-        font-size: 16px;
-    }
-}
-</style>
-
-
-<section class="help-section">
-<div class="help-container">
-    <div class="help-label">
-        <span>HOW WE HELP</span>
-    </div>
-    
-    <h2 class="help-heading">Quality, engineered in?</h2>
-    
-    <p class="help-description">
-        From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
-    </p>
-</div>
-</section>
-</div>
-
-
-
-
-
-
-<div class="column top-right">
-
-    <div class="side">
-
-<style>
-.side{
-    width: 100%;
-    height: 100vh;/* or any height you choose */
-
-    background-image: url('view1.webp');
-    background-size:cover;    /* always fills the div */
-    background-position: center;   /* prevents alignment gaps */
-    background-repeat: no-repeat;  /* stops tiling */
-}
-</style>
-    </div>
-
-</div>
-
-
-
-
-<div class="column bottom-left">
-    
-    <div class="side">
-
-        <style>
-        .side{
-                    width: 100%;
-                    height: 70vh;/* or any height you choose */
-            
-                    background-image: url('view1.webp');
-                    background-size:contain;     /* always fills the div */
-                    background-position: center;   /* prevents alignment gaps */
-                    background-repeat: no-repeat;  /* stops tiling */
+        .card-content {
+            padding: 25px;
         }
-        </style>
-                    </div>
-</div>
-<div class="column bottom-right">
 
-    <section class="help-section">
-        <div class="help-container">
-            <div class="help-label">
-                <span>HOW WE HELP</span>
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .all {
+                padding: 20px 15px;
+            }
+
+            .card-image {
+                height: 200px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .card-description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+<section class="all">
+    <div class="services">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Web Design" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Web Design Mastery</h3>
+                    <p class="card-description">Transform your digital presence with stunning, user-centric designs that captivate audiences and drive engagement. We craft visual experiences that tell your brand's story.</p>
+                </div>
             </div>
-            
-            <h2 class="help-heading">Quality, engineered in?</h2>
-            
-            <p class="help-description">
-                From early-stage test strategy to automation at scale, our packaged testing services are designed to embed quality across your SDLC, without slowing delivery. With flexible models, reusable accelerators and frameworks tailored to your stack, we help you test smarter and reduce late-stage rework. Whether it's functional, performance, or security testing, we make sure your software holds up and stands out.
-            </p>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Data Analytics</h3>
+                    <p class="card-description">Unlock powerful insights hidden within your data. Our advanced analytics solutions turn complex numbers into actionable strategies that fuel business growth and innovation.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Mobile Development" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Mobile Development</h3>
+                    <p class="card-description">Build seamless mobile experiences that users love. From iOS to Android, we create intuitive apps that keep your customers connected and engaged on the go.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Team Collaboration" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Team Collaboration</h3>
+                    <p class="card-description">Empower your teams to work smarter together. Our collaboration tools streamline communication and boost productivity across every department and location.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop" alt="Cloud Solutions" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cloud Solutions</h3>
+                    <p class="card-description">Scale your infrastructure effortlessly with secure cloud solutions. Access your data anywhere, anytime, while enjoying enterprise-grade security and reliability.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Cybersecurity" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cybersecurity Shield</h3>
+                    <p class="card-description">Protect your digital assets with military-grade security. We defend against evolving threats, ensuring your business stays safe from cyber attacks and data breaches.</p>
+                </div>
+            </div>
+
+
         </div>
-    </section>
-</div>
-</main>
+    </div>
+</section>
 
-
-
+</html> 
 

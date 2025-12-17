@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-16 Construction | Johannesburg | Services </title>
+</head>
+
+
+
+
+
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        nav {
+           
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(99, 4, 4, 0.82);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.3rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid rgb(211, 145, 145);
+            
+        }
+        .logo {
+            color: #ffffff;
+            display: flex;
+            align-items: left;
+            align-self: flex-start;
+            text-decoration: none;
+            height: 50px;
+        }
+
+        .logo img {
+            height:57px;
+            width:auto;
+                       
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        
+        .nav-menu li a {
+            text-decoration: none;
+            color: #fff2f2;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;       
+        }
+
+        .nav-menu li a:hover {
+            text-decoration: none;
+                background-color: #05568b;
+                padding: 10px 28px;
+                border-radius: 40px;
+                border:1px solid white;
+                transition: all 0.3s ease;
+                color:white;
+               
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        /* Burger Menu */
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 2.5px;
+            background: #fff2f2;
+            border-radius: 0px;
+            transition: all 0.3s ease;
+        }
+
+        /* Burger Animation */
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Content */
+        .content {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .burger {
+                display: flex;
+            }
+
+            .nav-menu {
+          
+                border-bottom:1px solid rgb(126, 3, 3);
+                position: fixed;
+                left: 0;
+                top: 60px;
+                flex-direction: column;
+                background:rgb(241, 241, 241);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu li a {
+            text-decoration: none;
+            color: #590e0e;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            .nav-menu li {
+               
+                padding: 1.5rem 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-menu li a::after {
+                display: none;
+
+            }
+
+            .content h1 {
+                font-size: 2rem;
+                color: #fff;
+            }
+
+            .content p {
+                font-size: 1rem;
+                color: #fff;
+            }
+        }
+    </style>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo"> 
+                <img src="zero-logo.png" alt="Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+<style>
+    .current{
+        
+                text-decoration: none;
+                background-color: #05568b;
+                padding: 10px 28px;
+                border-radius: 40px;
+                border:1px solid white;
+                transition: all 0.3s ease;
+                margin-top: auto;
+            }
+    
+            .current:hover {
+                background-color: #084670;
+                color: white;
+                transform: scale(1.05);
+            }
+</style>
+            
+                <li><a  class="current" href="services.html" style="color:white;">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu li a');
+
+        // Toggle menu
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+                burger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(255, 255, 255);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url("view1.webp") center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            padding-bottom: 8rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-top: 4rem;
+            max-width: 950px;
+           
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            max-width: 350px;
+            line-height: 1.6;
+        }
+
+        .card-container {
+            position: relative;
+         
+            display: flex;
+            justify-content: center;
+            margin-top: -150px;
+           
+        }
+
+        .card {
+           
+            width: 100%;
+         
+           
+             
+           
+            text-align: center;
+            
+        }
+
+        .card h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 200px 2rem 4rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .content-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .card-container {
+                margin-top: -130px;
+            }
+
+            .card {
+                padding: 1rem 0rem;
+            }
+
+            .content-section {
+                padding-top: 150px;
+            }
+        }
+    </style>
+
+
+    <section class="hero">
+        <br>
+        <h1>Premium Student Accommodation in Randfontein</h1>
+        <p>Safe, affordable, and inspiring living spaces designed for academic success</p>
+    </section>
+
+
+    <style>
+
+        .all {
+         
+          
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .services {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: rgb(92, 8, 8);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background:  rgb(92, 8, 8);
+            padding: 15px 24px;
+            border-radius:1px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #667eea;
+            z-index: 10;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .all {
+                padding: 20px 15px;
+            }
+
+            .card-image {
+                height: 200px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .card-description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+<section class="all">
+    <div class="services">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="deliverytruck.webp" alt="Web Design" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Web Design Mastery</h3>
+                    <p class="card-description">Transform your digital presence with stunning, user-centric designs that captivate audiences and drive engagement. We craft visual experiences that tell your brand's story.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="view1.webp" alt="Analytics" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Data Analytics</h3>
+                    <p class="card-description">Unlock powerful insights hidden within your data. Our advanced analytics solutions turn complex numbers into actionable strategies that fuel business growth and innovation.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="view1.webp" alt="Mobile Development" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Mobile Development</h3>
+                    <p class="card-description">Build seamless mobile experiences that users love. From iOS to Android, we create intuitive apps that keep your customers connected and engaged on the go.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="deliverytruck.webp" alt="Team Collaboration" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Team Collaboration</h3>
+                    <p class="card-description">Empower your teams to work smarter together. Our collaboration tools streamline communication and boost productivity across every department and location.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="deliverytruck.webp" alt="Cloud Solutions" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cloud Solutions</h3>
+                    <p class="card-description">Scale your infrastructure effortlessly with secure cloud solutions. Access your data anywhere, anytime, while enjoying enterprise-grade security and reliability.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-badge"></div>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Cybersecurity" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cybersecurity Shield</h3>
+                    <p class="card-description">Protect your digital assets with military-grade security. We defend against evolving threats, ensuring your business stays safe from cyber attacks and data breaches.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
