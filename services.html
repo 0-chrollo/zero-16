@@ -471,7 +471,7 @@
             .column p {
                 font-size: 1rem;
                 line-height: 1.6;
-                color: #1f040467;
+                color: #160202b4;
             }
     
             @media (max-width: 768px) {
@@ -812,3 +812,217 @@
         }, 1000);
     });
 </script>
+
+
+<style>
+
+
+    footer {
+background-color: rgb(71, 5, 5);
+        color: #fff;
+        padding: 60px 20px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.03) 49%, rgba(255,255,255,0.03) 51%, transparent 52%),
+            linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.03) 49%, rgba(255,255,255,0.03) 51%, transparent 52%);
+        background-size: 100px 100px;
+        pointer-events: none;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .tagline {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #c5d5d5;
+        margin-bottom: 30px;
+        max-width: 350px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icon:hover {
+        background: #d4a574;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+    }
+
+    .back-to-top {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        width: fit-content;
+    }
+
+    .back-to-top:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #d4a574;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #c5d5d5;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #d4a574;
+        padding-left: 5px;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 25px 0;
+        margin-top: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 13px;
+        color: #c5d5d5;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .tagline {
+            max-width: 100%;
+        }
+    }
+</style>
+
+
+<footer>
+<div class="footer-content">
+    <div class="footer-brand">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text"> <img src="zero-logo.png" alt="Zero 16 Enterprise Logo" style="width:100%; height:100%; object-fit:contain">
+                </span> 
+</div>
+
+       <br>
+        <p class="tagline">
+            Premium student accommodation provider in Randfontein. We develop, manage, and operate safe, affordable, and inspiring living spaces that foster academic success, personal growth, and community engagement.
+        </p>
+
+        <a href="#top" class="back-to-top">
+            <span>↑</span>
+            <span>Back to Top</span>
+        </a>
+    </div>
+
+    <div class="footer-column">
+        <h3>Site Map</h3>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+            <li>Accommodation Development</li>
+            <li>Property Management</li>
+            <li>Facilities Management</li>
+            <li>Leasing & Tenant Management</li>
+            <li>Real Estate Consulting</li>
+            <li>DFBOT Projects</li>
+        </ul>
+    </div>
+
+    <div class="footer-column">
+        <h3>Contact Info</h3>
+        <ul class="footer-links">
+            <li>Randfontein, South Africa</li>
+            
+            <li><a href="tel:+27123456789">+27 72 ** ****</a></li>
+            <li><a href="mailto:info@zero16.co.za">info@zero-16.co.za</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    Copyright © 2025 Zero 16 Enterprise (PTY) Ltd | Randfontein, South Africa
+</div>
+</footer>
+
+</body>
+</html>
