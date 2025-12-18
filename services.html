@@ -694,6 +694,8 @@
         </div>
     </div>
 </section>
+
+
 <style>
     /* Loading screen styles */
     #loading-screen {
@@ -702,7 +704,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: white;
+        background: rgb(72, 9, 9);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -735,9 +737,9 @@
     }
 
     .circle {
-        width: 16px;
-        height: 16px;
-        background-color: rgb(72, 9, 9);
+        width: 13px;
+        height: 13px;
+        background-color: rgb(255, 255, 255);
         border-radius: 50%;
         animation: float 1.5s ease-in-out infinite;
     }
@@ -784,6 +786,7 @@
 <div id="loading-screen">
     <div class="loader-container">
         <img src="zero-logo.png" alt="Logo" class="log">
+        <h3>Zero-16 Enterprise</h3>
 
         <br>
         <div class="loader">
@@ -814,7 +817,6 @@
             setTimeout(function() {
                 loadingScreen.remove();
             }, 500);
-        }, 1500);
+        }, 1000);
     });
 </script>
-

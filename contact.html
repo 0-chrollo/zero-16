@@ -701,3 +701,134 @@
 </body>
 
 
+
+
+
+
+
+<style>
+    /* Loading screen styles */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(72, 9, 9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.6s ease-out;
+    }
+
+    #loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loader-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+ .log{
+     
+    width: 60px;
+    height: auto;
+}
+ 
+
+    .loader {
+        display: flex;
+        gap: 15px;
+    }
+
+    .circle {
+        width: 13px;
+        height: 13px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        animation: float 1.5s ease-in-out infinite;
+    }
+
+    .circle:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .circle:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .circle:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-30px);
+        }
+    }
+
+    #main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in, visibility 0s 0.6s;
+}
+
+#main-content.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease-in, visibility 0s 0s;
+}
+</style>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader-container">
+        <img src="zero-logo.png" alt="Logo" class="log">
+        <h3>Zero-16 Enterprise</h3>
+
+        <br>
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<div id="main-content">
+    <!-- Your main page content goes here -->
+</div>
+
+<script>
+    // Hide loading screen after page loads
+    window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
+        
+        // Optional: Add a minimum display time (e.g., 2 seconds)
+        setTimeout(function() {
+            loadingScreen.classList.add('fade-out');
+            mainContent.classList.add('show');
+            
+            // Remove loading screen from DOM after fade out
+            setTimeout(function() {
+                loadingScreen.remove();
+            }, 500);
+        }, 1000);
+    });
+</script>
+
+
