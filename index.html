@@ -844,7 +844,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(2.5px) brightness(1);
+            filter: blur(1.8px) brightness(1);
         }
         
         .image-text {
@@ -880,6 +880,7 @@
         }
         
         .bottom-right {
+          
             order: 4;
         }
         
@@ -926,7 +927,11 @@
             .bottom-left {
                 display:none;
             }
-            
+            .bottom-right {
+            border-top:5px solid #12699f;
+           
+         
+        }
         
             .section {
 
@@ -1377,7 +1382,395 @@
         <div class="category-title-badge">DFBOT PROJECTS</div>
     </div>
 </div>
+
+
+
+
+
+
+    <style>
+
+        .team-container {
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
+            margin: 50px auto;
+            /* Minimal side padding to maximize visibility */
+            padding: 0 10px; 
+            color: #0d2c22;
+        }
+
+        /* Header Area */
+        .team-header {
+            margin-bottom: 50px;
+        }
+
+        .green-dash {
+            width: 35px;
+            height: 5px;
+            background-color: #0f68a0;
+            margin-bottom: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .team-title {
+            font-size: clamp(10px, 3.5vw, 25px);
+            font-weight: 600;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .team-description {
+            color: #717171;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 550px;
+            margin-top: 20px;
+        }
+
+        /* Slider Logic */
+        .team-grid {
+            display: flex;
+            gap: 15px; /* Reduced gap to bring cards closer on mobile */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; 
+            padding-bottom: 60px; /* Space for the tag overflow */
+            /* This padding-right is key to showing more of the next card */
+            padding-right: 40px; 
+        }
+
+        .team-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .team-card {
+            /* Changed to 82% to let the 2nd member show "just a tiny bit" more */
+            flex: 0 0 82%; 
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        /* Card Image Wrapper */
+        .image-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1.1;
+            border-radius: 2px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Background Tints */
+        .bg-emma { background-color: #d4dbcd; }
+        .bg-mia { background-color: #d6ccc4; }
+        .bg-harshita { background-color: #d1b8b8; }
+
+        /* Overlapping Info Tag */
+        .info-tag {
+            position: absolute;
+            bottom: -25px; 
+            left: 20px;
+            right: 0;
+            background: linear-gradient(115deg, #1770a7 0%, #052557 100%);
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .info-tag h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .info-tag p {
+            margin: 3px 0 0;
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .arrow-btn {
+            font-size: 18px;
+            color: #333;
+            letter-spacing: -2px;
+        }
+
+        /* Pagination Indicators */
+        .pagination {
+            display: flex;
+            justify-content:center;
+            gap: 8px;
+            margin-top: 20px;
+            
+        }
+
+        .bar {
+            width: 35px;
+            height: 7px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .bar.active {
+            background: linear-gradient(115deg, #1788cf 0%, #052557 100%);
+            width: 35px;
+        }
+
+        /* Navigation Buttons */
+        .nav-but {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #1a3a32;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-but:hover {
+            background: #1a3a32;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-but.prev {
+            left: -25px;
+        }
+
+        .nav-but.next {
+            right: -25px;
+        }
+
+        .slider-wrapper {
+            position: relative;
+        }
+
+        /* Desktop Adjustments */
+        @media (min-width: 992px) {
+            .team-card {
+                flex: 0 0 calc(33.333% - 20px);
+            }
+            .team-grid {
+                overflow-x: auto;
+                gap: 30px;
+                padding-right: 0;
+                scroll-behavior: smooth;
+            }
+            .pagination {
+                
+            }
+            .team-container {
+                padding: 0 40px;
+            }
+            .nav-but {
+                display: flex;
+            }
+        }
+    </style>
+
+
+    <section class="team-container">
+        <div class="team-header">
+            <div>
+                <span class="green-dash"></span>
+                <h2 class="team-title">Our Extraordinary Team</h2>
+            </div>
+            <p class="team-description">
+                Discover brilliance in action with our exceptional team, fusing diverse talents to drive innovation and success.
+            </p>
         </div>
+
+        <div class="slider-wrapper">
+            <button class="nav-but prev" onclick="slideTeam('prev')">‹</button>
+            <button class="nav-but next" onclick="slideTeam('next')">›</button>
+            
+            <div class="team-grid" id="teamSlider">
+                <div class="team-card">
+                    <div class="image-box bg-emma">
+                        <img src="profile.jpg" alt="Emma Davis">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Mosa Given Ntlhophi</h3>
+                                <p>CEO</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Mr Henry Sechele</h3>
+                                <p>Non Executive Director</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Ms Patience Naledi Ntlhophi</h3>
+                                <p>Director</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Mr Boikanyo Sifiso Nameng</h3>
+                                <p>Director</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Ms Karabo Basetsana Bole</h3>
+                                <p>Director</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Mr Harry Matsitse</h3>
+                                <p>Board Member</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Mr Seth Teboho Ntlhophi</h3>
+                                <p>Board Member</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="team-card">
+                    <div class="image-box bg-harshita">
+                        <img src="profile.jpg" alt="Harshita Patel">
+                        <div class="info-tag">
+                            <div>
+                                <h3>Dr Ben Bole</h3>
+                                <p>Board Member</p>
+                            </div>
+                            <div class="arrow-btn">»</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="pagination">
+            <div class="bar active"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </section>
+
+    <script>
+        const slider = document.getElementById('teamSlider');
+        const bars = document.querySelectorAll('.bar');
+
+        // Navigation function for desktop buttons
+        function slideTeam(direction) {
+            const cardWidth = slider.querySelector('.team-card').clientWidth + 30; // 30 is the gap on desktop
+            const scrollAmount = direction === 'next' ? cardWidth : -cardWidth;
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        // Update pagination on scroll (mobile)
+        slider.addEventListener('scroll', () => {
+            const scrollLeft = slider.scrollLeft;
+            const cardWidth = slider.querySelector('.team-card').clientWidth + 15; // 15 is the gap on mobile
+            const index = Math.round(scrollLeft / cardWidth);
+
+            bars.forEach((bar, i) => {
+                if (i === index) {
+                    bar.classList.add('active');
+                } else {
+                    bar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <style>
 
 
@@ -1597,7 +1990,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgb(72, 9, 9);
+            background: linear-gradient(115deg, #0c598a 0%, #031b41 100%);
             display: flex;
             justify-content: center;
             align-items: center;
