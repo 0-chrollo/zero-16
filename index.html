@@ -1411,18 +1411,18 @@
             }
         </style>
 
+
+        
+
 <div class="pic-sec">
     <div class="pic-label">our services</div>
     <h1 class="pic-title">Comprehensive Student Accommodation Solutions</h1>
 </div>
 <style>
-      .pic-sec{
-        padding:2.5rem;
 
-        
-    }
 
-    .pic-label {
+
+.pic-label {
         color: #02111a;
         font-size: 0.875rem;
         font-weight: 600;
@@ -1447,6 +1447,37 @@
         line-height: 1.2;
         font-family: Georgia, serif;
     }
+     /* Animation styles - add these to your existing CSS */
+.pic-sec {
+    opacity: 0;
+    padding:2.5rem;
+
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.pic-sec.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-card {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.category-card.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.category-card:nth-child(1).animate { transition-delay: 0.1s; }
+.category-card:nth-child(2).animate { transition-delay: 0.2s; }
+.category-card:nth-child(3).animate { transition-delay: 0.3s; }
+.category-card:nth-child(4).animate { transition-delay: 0.4s; }
+.category-card:nth-child(5).animate { transition-delay: 0.5s; }
+.category-card:nth-child(6).animate { transition-delay: 0.6s; }
 </style>
 
 <div class="design-categories-wrapper">
@@ -1484,7 +1515,29 @@
 
 
 
-
+<script>
+    const servicesHeader = document.querySelector('.pic-sec');
+    const serviceCards = document.querySelectorAll('.category-card');
+    
+    const servicesObserverOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+    };
+    
+    const servicesObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, servicesObserverOptions);
+    
+    servicesObserver.observe(servicesHeader);
+    
+    serviceCards.forEach(card => {
+        servicesObserver.observe(card);
+    });
+    </script>
 
 
     <style>
