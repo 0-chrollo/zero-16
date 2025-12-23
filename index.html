@@ -798,227 +798,220 @@
 
 
 
+  
+<style>
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .section {
+        width: 50%;
+        min-height: 50vh;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .section.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .text-section {
+        padding: 40px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .image-section {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(1.8px) brightness(1);
+    }
+    
+    .image-text {
+        position: relative;
+        z-index: 1;
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: #f4e7e7;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: #095686ac;
+        padding: 11px 32px;
+        border: 1px solid white;
+    }
+    
+    .top-left {
+        order: 1;
+        transition-delay: 0.1s;
+    }
+    
+    .top-right {
+        order: 2;
+        transition-delay: 0.2s;
+    }
+    
+    .bottom-left {
+        order: 3;
+        transition-delay: 0.3s;
+    }
+    
+    .bottom-right {
+        order: 4;
+        transition-delay: 0.4s;
+    }
+    
+    .label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+    
+    .label::before {
+        content: '';
+        width: 40px;
+        height: 7px;
+        background-color: #0a5888;
+    }
+    
+    .label span {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: #333;
+        letter-spacing: 2px;
+    }
+    
+    .heading {
+        font-family: Georgia, serif;
+        font-size: 52px;
+        font-weight: 400;
+        color: #2d2d2d;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+    
+    .description {
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        color: #555;
+        line-height: 1.7;
+    }
+    
+    @media (max-width: 968px) {
+        .bottom-left {
+            display: none;
+        }
+ 
+        
+        .section {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="section text-section top-left">
+        <div class="label">
+            <span>WHO WE ARE</span>
+        </div>
+        <h2 class="heading">Premium Student Living Since 2018</h2>
+        <p class="description">
+            Zero 16 Enterprise specializes in developing and managing premium student accommodation in Randfontein. We provide safe, affordable, and inspiring living environments that foster academic success, personal growth, and community engagement. Our purpose-built residences feature high-speed internet, study spaces, recreational facilities, and 24/7 security to ensure students thrive.
+        </p>
+    </div>
+    
+    <div class="section image-section top-right">
+        <div class="image-overlay" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80');"></div>
+        <div class="image-text">Modern Living</div>
+    </div>
+    
+    <div class="section image-section bottom-left">
+        <div class="image-overlay" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80');"></div>
+        <div class="image-text">Student Success</div>
+    </div>
+    
+    <div class="section text-section bottom-right">
+        <div class="label">
+            <span>OUR MISSION</span>
+        </div>
+        <h2 class="heading">Designed for Your Success</h2>
+        <p class="description">
+            Our mission is to provide students with safe, affordable, and inspiring living spaces near Westcol TVET College. With 280+ residential units featuring semi-furnished accommodation, controlled access, CCTV surveillance, and study-friendly environments, we address the critical shortage of quality student housing in the West Rand District. Every detail is designed to support your academic journey.
+        </p>
+    </div>
+</div>
+
+<script>
+    const sections = document.querySelectorAll('.section');
+    
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -10px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+
+
+
+
+
+
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             overflow-x: hidden;
         }
-        
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .section {
-            width: 50%;
-            min-height: 50vh;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .section.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .text-section {
-            padding: 40px 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .image-section {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(1.8px) brightness(1);
-        }
-        
-        .image-text {
-            position: relative;
-            z-index: 1;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #f4e7e7;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-decoration: none;
-            background-color: #095686ac;
-            padding: 11px 32px;
-            border: 1px solid white;
-        }
-        
-        .top-left {
-            order: 1;
-            transition-delay: 0.1s;
-        }
-        
-        .top-right {
-            order: 2;
-            transition-delay: 0.2s;
-        }
-        
-        .bottom-left {
-            order: 3;
-            transition-delay: 0.3s;
-        }
-        
-        .bottom-right {
-            order: 4;
-            transition-delay: 0.4s;
-        }
-        
-        .label {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-        
-        .label::before {
-            content: '';
-            width: 40px;
-            height: 7px;
-            background-color: #0a5888;
-        }
-        
-        .label span {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: #333;
-            letter-spacing: 2px;
-        }
-        
-        .heading {
-            font-family: Georgia, serif;
-            font-size: 52px;
-            font-weight: 400;
-            color: #2d2d2d;
-            line-height: 1.2;
-            margin-bottom: 30px;
-        }
-        
-        .description {
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: 400;
-            color: #555;
-            line-height: 1.7;
-        }
-        
-        @media (max-width: 968px) {
-            .bottom-left {
-                display: none;
-            }
-            .bottom-right {
-                
-            }
-            
-            .section {
-                width: 100%;
-            }
-        }
-    </style>
 
-    <div class="container">
-        <div class="section text-section top-left">
-            <div class="label">
-                <span>WHO WE ARE</span>
-            </div>
-            <h2 class="heading">Premium Student Living Since 2018</h2>
-            <p class="description">
-                Zero 16 Enterprise specializes in developing and managing premium student accommodation in Randfontein. We provide safe, affordable, and inspiring living environments that foster academic success, personal growth, and community engagement. Our purpose-built residences feature high-speed internet, study spaces, recreational facilities, and 24/7 security to ensure students thrive.
-            </p>
-        </div>
-        
-        <div class="section image-section top-right">
-            <div class="image-overlay" style="background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80');"></div>
-            <div class="image-text">Modern Living</div>
-        </div>
-        
-        <div class="section image-section bottom-left">
-            <div class="image-overlay" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80');"></div>
-            <div class="image-text">Student Success</div>
-        </div>
-        
-        <div class="section text-section bottom-right">
-            <div class="label">
-                <span>OUR MISSION</span>
-            </div>
-            <h2 class="heading">Designed for Your Success</h2>
-            <p class="description">
-                Our mission is to provide students with safe, affordable, and inspiring living spaces near Westcol TVET College. With 280+ residential units featuring semi-furnished accommodation, controlled access, CCTV surveillance, and study-friendly environments, we address the critical shortage of quality student housing in the West Rand District. Every detail is designed to support your academic journey.
-            </p>
-        </div>
-    </div>
-
-    <script>
-        const sections = document.querySelectorAll('.section');
-        
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-<BR>
-
-    <br>
-    
-
-    <style>
         .values {
             border-top: 7px solid #279de7;
             border-bottom: 7px solid #279de7;
             background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80");
             background-size: cover;
             background-position: center;
+            overflow: hidden;
         }
 
         .main-wrapper {
@@ -1026,6 +1019,7 @@
             background: linear-gradient(115deg, #0f68a0d4 0%, #052457c4 100%);
             padding: 1rem;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow: hidden;
         }
 
         .content-area {
@@ -1083,17 +1077,13 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             opacity: 0;
-            transform: translateX(-100px) scale(0.9);
+            transform: translateY(50px) scale(0.95);
             transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-        }
-
-        .info-card:nth-child(even) {
-            transform: translateX(100px) scale(0.9);
         }
 
         .info-card.animate {
             opacity: 1;
-            transform: translateX(0) scale(1);
+            transform: translateY(0) scale(1);
         }
 
         .info-card:nth-child(1).animate {
@@ -1338,7 +1328,9 @@
         });
     </script>
 
+    
 
+   
 
   
         <style>
